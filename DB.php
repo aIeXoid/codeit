@@ -10,16 +10,13 @@ class DB {
 	public static function getInstance() {
 
 		if(empty(self::$instance)) {
-
-			try{
-                self::$instance = new PDO('mysql:host=localhost;dbname=auction','','');
-            }
-            catch(PDOException $e){
-                echo 'Error : '.$e->getMessage();
-            }
-
+		    try{
+	                self::$instance = new PDO('mysql:host=localhost;dbname=auction','','');
+	            }
+	            catch(PDOException $e){
+	                echo 'Error : '.$e->getMessage();
+	            }
 		}
-
 		return self::$instance;
 	}
 }
